@@ -29,4 +29,5 @@ COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
 ENTRYPOINT ["java","-cp","app:app/lib/*","br.monitoramento.motu.ApiMottuApplication"]
 
 # Usuário não-root para segurança
-RUN addgroup -S spring && adduser -S spring -G spring USER spring
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring
